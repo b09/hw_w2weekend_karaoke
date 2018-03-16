@@ -1,7 +1,9 @@
-class Guest 
+class Guest
 
-  def initialize
+attr_accessor :gname
 
+  def initialize(guest_name)
+    @gname = guest_name
   end
 
 
