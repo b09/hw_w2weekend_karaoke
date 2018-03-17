@@ -26,19 +26,8 @@ attr_accessor :rname, :roccupants, :rplaylist, :rfee
   end
 
   def entry_fee
-    # p @roccupants.class
     for guest in @roccupants
-      # p guest.class
-      # if guest.gwallet < @rfee
-      #   return "Not enough money"
-      # else
-      #   return "Guest has enough money"
-      # p @roccupants
       return guest.gwallet < @rfee ? "Not enough money" : "Guest has enough money"
-
-      # p guest.gwallet
-      # p @roccupants.class
-      # end
     end
   end
 

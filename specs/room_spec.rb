@@ -34,9 +34,9 @@ class TestRoom < Minitest::Test
     assert_equal(@some_songs, @room1.rplaylist)
   end
 
-  # def test_room_name_number
-  #   assert_equal(2, @room1.rname)
-  # end
+  def test_room_name_number
+    assert_equal(1, @room1.rname)
+  end
 
   def test_room_occupants
     assert_equal(@some_guests, @room1.roccupants)
@@ -68,13 +68,13 @@ class TestRoom < Minitest::Test
   def test_entry_fee__enough_money
     assert_equal("Guest has enough money", @room3.entry_fee)
   end
-  #
-  # def test_entry_fee__not_enough_money
-  #   guest = Guest.new("Lisa Simpson")
-  #   guest.change_wallet(9)
-  #   room4 = Room.new(3, guest, @some_songs)
-  #   assert("Not enough money", room4.entry_fee)
-  # end
+
+  def test_entry_fee__not_enough_money
+    guest = Guest.new("Lisa Simpson")
+    guest.change_wallet(9)
+    room4 = Room.new(3, [guest], @some_songs)
+    assert_equal("Not enough money", room4.entry_fee)
+  end
 
 
 end
